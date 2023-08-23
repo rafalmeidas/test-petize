@@ -1,0 +1,48 @@
+.container {
+  padding: 16px;
+}
+
+.containerAvatar {
+  display: flex;
+  gap: 16px;
+}
+
+.containerAvatar img {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 14px;
+}
+
+.name {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.login {
+  color: #a0aec0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.containerInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.bio {
+  color: #4a5568;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}

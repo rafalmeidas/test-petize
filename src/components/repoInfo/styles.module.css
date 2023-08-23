@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #4a5568;
+  border-bottom: 0.1px solid #f0f3f7;
+  padding-bottom: 1rem;
+}
+
+.repoName {
+  color: #171923;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.info {
+  display: flex;
+  gap: 10px;
+}
+
+.pseudo {
+  position: relative;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+
+.pseudo::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  background-color: #4a5568;
+  border-radius: 50%;
+}
