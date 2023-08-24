@@ -58,6 +58,7 @@ Antes de começar a usar o projeto 'Search d_evs', certifique-se de que você te
 
 #### Estrutura do Projeto
 
+```
 search d_evs/
 │
 ├─ src/
@@ -98,6 +99,7 @@ search d_evs/
 ├─ README.md # Documentação do projeto
 ├─ package.json # Informações e dependências do projeto
 └─ insomnia-test-petize.json # Arquivo de rotas e env para importar no Insominia
+```
 
 #### Libs
 
