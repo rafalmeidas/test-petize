@@ -1,3 +1,5 @@
+[![Front-End Tests](https://github.com/rafalmeidas/search-d_evs/actions/workflows/NOME_DO_ARQUIVO_YML/badge.svg)](https://github.com/rafalmeidas/search-d_evs/actions/workflows/front-end-tests.yml)
+
 # 👋 Search d_evs
 
 O projeto 'Search d_evs' é uma aplicação que foi desenvolvida como parte de um teste para uma posição como desenvolvedor front-end na Petize. O objetivo principal da aplicação é permitir que os usuários pesquisem perfis de desenvolvedores no GitHub.
