@@ -6,19 +6,21 @@ O 'Search d_evs' é uma aplicação prática e funcional que demonstra habilidad
 
 ## 📚 Índice
 
-- [ℹ️ Sobre](#sobre)
+- [ℹ️ Sobre](#ℹ%EF%B8%8F-sobre)
 
-- [✨ Recursos](#recursos)
+- [✨ Recursos](#-recursos)
 
-- [🛠️ Pré-requisitos](#pré-requisitos)
+- [🛠️ Pré-requisitos](#%EF%B8%8F-pré-requisitos)
 
-- [⚙️ Instalação](#instalação)
+- [⚙️ Instalação](#%EF%B8%8F-instalação)
 
-- [🚀 Como Usar](#como-usar)
+- [🧪 Testar](#-testar)
+
+- [🚀 Como Usar](#-como-usar)
 
 - [🤝 Contribuição](#contribuição)
 
-- [📝 Licença](#licença)
+- [📝 Licença](#-licença)
 
 ## ℹ️ Sobre
 
@@ -52,18 +54,77 @@ Antes de começar a usar o projeto 'Search d_evs', certifique-se de que você te
 
 - Compreensão de testes unitários e familiaridade com a estrutura de testes Jest.
 
-### Software e Ferramentas
+### Estrutura do Projeto e Libs
 
-- [Node.js](https://nodejs.org/): O projeto utiliza o Node.js para executar e construir a aplicação. Certifique-se de ter o Node.js instalado em sua máquina.
+#### Estrutura do Projeto
 
-- [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/): O gerenciador de pacotes Node.js é necessário para instalar e gerenciar as dependências do projeto.
+search d_evs/
+│
+├─ src/
+│ ├─ **tests**/ # Testes de unidade e integração
+│ │
+│ ├─ components/ # Componentes reutilizáveis
+│ │ ├─ Button.tsx # Componente de botão
+│ │ ├─ Alert.tsx # Componente de alerta
+│ │ ├─ IconLabel.tsx # Componente de ícone com label
+│ │ ├─ Loader.tsx # Componente de loading com overlay
+│ │ ├─ Paragraph.tsx # Componente de parágrafo
+│ │ ├─ RepoInfo.tsx # Componente de detalhes de repositório
+│ │ ├─ SearchDevsProps.tsx # Componente de busca de usuário Github
+│ │ ├─ UserInfo.tsx # Componente de detalhes de usuário Github
+│ │
+│ ├─ models/ # Tipos de dados e interfaces
+│ │ ├─ User.ts # Definição do modelo User
+│ │ ├─ Repo.ts # Definição do modelo Repo
+│ │
+│ ├─ pages/ # Páginas da aplicação
+│ │ ├─ Home.tsx # Página inicial
+│ │ ├─ Profile.tsx # Página de perfil de usuário
+│ │
+│ ├─ services/ # Serviços de integração com APIs
+│ │ ├─ api.ts # Configuração do Axios
+│ │ ├─ usersService.ts # Funções de busca de usuários e repositórios
+│ │
+│ ├─ templates/ # Templates de layout
+│ │ ├─ Header.tsx # Template de header
+│ │ ├─ Main.tsx # Template principal
+│ │
+│ ├─ utils/ # Utilitários e funções auxiliares
+│ │ ├─ dateFnsUtils.ts # Funções utilitárias para datas
+│ │
+│ ├─ App.tsx # Componente raiz da aplicação
+│ ├─ index.tsx # Ponto de entrada da renderização
+│
+├─ README.md # Documentação do projeto
+├─ package.json # Informações e dependências do projeto
+└─ insomnia-test-petize.json # Arquivo de rotas e env para importar no Insominia
+
+#### Libs
+
+Bibliotecas utilizadas e motivação:
+
+- **axios:** O uso do Axios no React proporciona uma maneira simples e eficiente de fazer requisições HTTP para APIs externas ou endpoints internos. Com sua sintaxe limpa e recursos avançados, como tratamento de erros, cancelamento de requisições e suporte a interceptores, o Axios simplifica a comunicação entre o front-end e o back-end, tornando o processo de obtenção e envio de dados mais confiável e flexível.
+
+- **date-fns:** O uso do date-fns no React oferece uma maneira fácil e robusta de lidar com manipulação, formatação e análise de datas. Com uma variedade de funções poderosas, o date-fns simplifica tarefas como cálculos de diferença entre datas, formatação localizada e criação de intervalos de datas. Ao integrar o date-fns ao seu projeto React, você garante uma experiência de usuário mais precisa e amigável ao lidar com informações temporais.
+
+- **react-router-dom:** O uso do react-router-dom no React é essencial para criar aplicativos de página única (SPA) com navegação suave e dinâmica. Com suas rotas declarativas e capacidade de renderizar componentes específicos para cada URL, o react-router-dom simplifica a organização do aplicativo e oferece uma experiência de usuário mais fluida ao alternar entre diferentes páginas e estados. Além disso, ele integra-se perfeitamente com os recursos do React, permitindo criar interfaces de usuário interativas e responsivas de maneira eficiente.
+
+#### Libs de teste
+
+- **axios-mock-adapter:** A utilização do axios-mock-adapter no React é fundamental para o desenvolvimento de testes de integração eficazes e realistas. Com essa ferramenta, é possível simular respostas de APIs externas de maneira controlada e previsível, permitindo testar o comportamento do aplicativo em diferentes cenários sem depender de uma API real. Isso agiliza a detecção de bugs, melhora a cobertura de testes e aumenta a confiabilidade do código, contribuindo para a qualidade geral do projeto.
 
 ## ⚙️ Instalação
+
+- [Node.js - v18.17.1 ou superior](https://nodejs.org/): O projeto utiliza o Node.js para executar e construir a aplicação. Certifique-se de ter o Node.js instalado em sua máquina.
+
+- [NPM - v9.6.7 ou superior](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/): O gerenciador de pacotes Node.js é necessário para instalar e gerenciar as dependências do projeto.
 
 Passo 1 - **Clone o repositório do projeto para sua máquina local usando o seguinte comando:**
 
 ```sh
+
 https://github.com/rafalmeidas/search-d_evs.git
+
 ```
 
 Passo 2 - **Ou [baixe](https://github.com/rafalmeidas/search-d_evs/archive/refs/heads/main.zip) o .zip e descompacte:**
@@ -71,49 +132,79 @@ Passo 2 - **Ou [baixe](https://github.com/rafalmeidas/search-d_evs/archive/refs/
 Passo 3 - **Navegue para a pasta do projeto usando o terminal:**
 
 ```sh
-cd search-d_evs
+
+cd  search-d_evs
+
 ```
 
 Passo 4 - **Instale as dependências do projeto usando NPM ou Yarn. Escolha um dos comandos abaixo:**
 
 ```sh
-npm install
+
+npm  install
+
 ```
 
 ou
 
 ```sh
-yarn install
+
+yarn  install
+
 ```
 
 Passo 5 - **Inicie a Aplicação:**
 
 ```sh
-npm start
+
+npm  start
+
 ```
 
 ou
 
 ```sh
-yarn start
+
+yarn  start
+
 ```
 
 Pronto, basta acessar um navegador de sua preferência, e acessar o link a seguir:
 
 - [🌐 Search d_evs](http://localhost:3000/home)
 
-## 🧪 Testar
-
-Após efetuar o passo de [⚙️ Instalação](#instalação) execute o seguinte comando:
+Passo 6 - **Gerar Build de Deploy (Opcional):**
 
 ```sh
-npm run test
+
+npm  run  build
+
 ```
 
 ou
 
 ```sh
-yarn test
+
+yarn  build
+
+```
+
+## 🧪 Testar
+
+Após efetuar o passo de [⚙️ Instalação](#instalação) execute o seguinte comando:
+
+```sh
+
+npm  run  test
+
+```
+
+ou
+
+```sh
+
+yarn  test
+
 ```
 
 ## 🚀 Como Usar
@@ -121,29 +212,37 @@ yarn test
 Após concluir a instalação e configuração do projeto 'Search d_evs', siga os passos abaixo para explorar e interagir com a aplicação:
 
 1 - **Acesso à Tela Principal:**
+
 Ao iniciar o aplicativo, você será direcionado para a tela principal. Nesta tela, você encontrará uma caixa de entrada de texto e um botão de pesquisa.
 
 2 - **Pesquisa por Usuário do GitHub:**
 
 - Digite o nome de usuário de um desenvolvedor do GitHub na caixa de entrada de texto.
+
 - Após digitar o nome de usuário, você pode pressionar a tecla 'Enter' ou clicar no botão de pesquisa.
+
 - Se o usuário existir no GitHub, você será automaticamente redirecionado para a tela de detalhes do perfil.
 
 3 - **Tela de Detalhes do Perfil:**
 
 - Na tela de detalhes do perfil, você encontrará informações abrangentes sobre o perfil do desenvolvedor.
+
 - Isso inclui detalhes como o nome completo, nome de usuário, foto de perfil, bio e localização do usuário.
+
 - Além disso, uma lista de repositórios associados ao usuário será apresentada, com o nome de cada repositório e uma breve descrição.
 
 4 - **Acesso aos Repositórios no GitHub:**
 
 - Ao lado de cada nome de repositório, você encontrará um link. Ao clicar no nome do repositório, você será direcionado ao repositório original no GitHub.
+
 - Isso permitirá que você explore e obtenha mais informações sobre o repositório, seus commits, problemas e outras informações relevantes.
 
 5 - **Acesso ao Twitter e Blog (se disponíveis):**
 
 - Se o perfil do desenvolvedor tiver um link para o Twitter e/ou um blog associado, você encontrará esses links na tela de detalhes.
+
 - Ao clicar no link do Twitter ou ícone, você será redirecionado para a página do Twitter do desenvolvedor, onde poderá segui-lo e obter mais informações.
+
 - Ao clicar no link do blog ou ícone, você será redirecionado para a página do blog do desenvolvedor, onde poderá ler suas postagens e artigos.
 
 6 - **Redirecionamento para a Tela Home:**
@@ -153,14 +252,14 @@ Ao iniciar o aplicativo, você será direcionado para a tela principal. Nesta te
 7 - **Pesquisa no Cabeçalho:**
 
 - No cabeçalho, você encontrará um campo de entrada de texto onde poderá pesquisar outros usuários do GitHub.
+
 - Digite o nome de usuário desejado e pressione a tecla 'Enter'.
+
 - Se o usuário não existir, uma mensagem será exibida na tela informando que o usuário pesquisado não existe. Você poderá pesquisar outro usuário.
 
 Agora você está pronto para explorar e utilizar o projeto 'Search d_evs' com todas as funcionalidades disponíveis! Divirta-se explorando perfis de desenvolvedores e suas contribuições no GitHub de maneira simples e eficaz.
 
 ## 📝 Licença
-
-Indicação da licença sob a qual o projeto está disponível.
 
 ---
 

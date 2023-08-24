@@ -88,9 +88,13 @@ function Profile() {
           </div>
         </div>
       ) : (
-        <section className={styles.alert}>
-          <Alert message="Usuário pesquisado não existe. Você pode pesquisar outro usuário 😄." />
-        </section>
+        <>
+          {!isLoading ? (
+            <section className={styles.alert}>
+              <Alert message="Usuário pesquisado não existe. Você pode pesquisar outro usuário 😄." />
+            </section>
+          ) : null}
+        </>
       )}
     </div>
   );

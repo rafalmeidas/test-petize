@@ -4,7 +4,7 @@ import styles from "./header.module.css";
 
 export default function Header() {
   return (
-    <header className={styles.container}>
+    <header data-testid="header" className={styles.container}>
       <SearchDevs isHeader />
     </header>
   );

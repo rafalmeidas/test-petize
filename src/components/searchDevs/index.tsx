@@ -41,7 +41,7 @@ export default function SearchDevs({ isHeader = false }: SearchDevsProps) {
         className={`${styles.logoColor} ${
           !isHeader ? styles.logo : styles.logoHeader
         }`}
-        onClick={() => isHeader && navigate("/")}
+        onClick={() => isHeader && navigate("/home")}
       >
         Search <span className={styles.subLogo}>d_evs</span>
       </h1>
@@ -58,6 +58,8 @@ export default function SearchDevs({ isHeader = false }: SearchDevsProps) {
           <input
             ref={inputRef}
             type="text"
+            name="search"
+            aria-label="search"
             placeholder="Search"
             value={search}
             onChange={onChangeSearch}

@@ -4,7 +4,7 @@ import styles from "./iconLabel.module.css";
 
 type IconLabelPropos = {
   icon: ReactNode;
-  value: string | number;
+  value?: string | number;
   label?: string;
   isLink?: boolean;
   preValue?: string;

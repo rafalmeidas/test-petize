@@ -1,11 +1,9 @@
 import {
-  format,
   differenceInDays,
   differenceInMonths,
   differenceInYears,
   parseISO,
 } from "date-fns";
-import ptBR from "date-fns/locale/pt-BR";
 
 export const formatUpdatedDate = (
   isoDate: string,
