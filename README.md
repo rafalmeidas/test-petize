@@ -1,4 +1,4 @@
-[![Front-End Tests](https://github.com/rafalmeidas/search-d_evs/actions/workflows/NOME_DO_ARQUIVO_YML/badge.svg)](https://github.com/rafalmeidas/search-d_evs/actions/workflows/front-end-tests.yml)
+[![Front-End Tests](https://github.com/rafalmeidas/search-d_evs/actions/workflows/front-end-tests.yml/badge.svg)](https://github.com/rafalmeidas/search-d_evs/actions/workflows/front-end-tests.yml)
 
 # 👋 Search d_evs
 
