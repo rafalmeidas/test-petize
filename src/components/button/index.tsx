@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
-import styles from "./styles.module.css";
+import styles from "./button.module.css";
 
 export function Button({
   ...rest

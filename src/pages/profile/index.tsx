@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { AxiosResponse } from "axios";
 
+import { Button } from "../../components/button";
 import UserInfo from "../../components/userInfo";
 import RepoInfo from "../../components/repoInfo";
+import Loader from "../../components/loader";
 
 import { getRepos, getUser } from "../../services/usersService";
 
@@ -11,6 +13,7 @@ import { User } from "../../models/user";
 import { Repo } from "../../models/repo";
 
 import styles from "./profile.module.css";
+import Alert from "../../components/alert";
 
 function Profile() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -47,7 +50,10 @@ function Profile() {
   const loadApi = useCallback(() => {
     if (!username) return;
 
+    setUser(null);
+    setRepos([]);
     setIsLoading(true);
+
     Promise.allSettled([getUser(username), getRepos(username)])
       .then(handleAllSettled)
       .finally(() => setIsLoading(false));
@@ -59,17 +65,33 @@ function Profile() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.content}>
-        <div className={styles.container1}>
-          {user && <UserInfo user={user} />}
+      {isLoading ? <Loader /> : null}
+      {user ? (
+        <div className={styles.content}>
+          <div>
+            <div className={styles.container1}>
+              {user && <UserInfo user={user} />}
+            </div>
+            <div className={styles.containerContact}>
+              <Button>Contato</Button>
+            </div>
+          </div>
+
+          <div className={styles.container2}>
+            {repos.length > 0 ? (
+              repos.map((repo, index) => (
+                <RepoInfo repo={repo} key={`repo-${index}`} />
+              ))
+            ) : (
+              <Alert message="Não existem repositórios disponíveis para exibição." />
+            )}
+          </div>
         </div>
-        <div className={styles.container2}>
-          {repos &&
-            repos.map((repo, index) => (
-              <RepoInfo repo={repo} key={`repo-${index}`} />
-            ))}
-        </div>
-      </div>
+      ) : (
+        <section className={styles.alert}>
+          <Alert message="Usuário pesquisado não existe. Você pode pesquisar outro usuário 😄." />
+        </section>
+      )}
     </div>
   );
 }

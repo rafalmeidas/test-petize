@@ -7,6 +7,10 @@
   padding-bottom: 1rem;
 }
 
+.container a {
+  text-decoration: none;
+}
+
 .repoName {
   color: #171923;
   font-size: 20px;
