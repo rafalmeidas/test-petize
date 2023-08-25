@@ -2,10 +2,11 @@ import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AxiosResponse } from "axios";
 
-import { Button } from "../../components/button";
+import ContactButton from "../../components/contactButton";
 import UserInfo from "../../components/userInfo";
 import RepoInfo from "../../components/repoInfo";
 import Loader from "../../components/loader";
+import Alert from "../../components/alert";
 
 import { getRepos, getUser } from "../../services/usersService";
 
@@ -13,7 +14,6 @@ import { User } from "../../models/user";
 import { Repo } from "../../models/repo";
 
 import styles from "./profile.module.css";
-import Alert from "../../components/alert";
 
 function Profile() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -72,9 +72,7 @@ function Profile() {
             <div className={styles.container1}>
               {user && <UserInfo user={user} />}
             </div>
-            <div className={styles.containerContact}>
-              <Button>Contato</Button>
-            </div>
+            <ContactButton user={user} />
           </div>
 
           <div className={styles.container2}>
