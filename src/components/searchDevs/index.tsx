@@ -11,7 +11,7 @@ type SearchDevsProps = {
 };
 
 export default function SearchDevs({ isHeader = false }: SearchDevsProps) {
-  const [search, setSearch] = useState<string>("");
+  const [search, setSearch] = useState<string>("rafalmeidas");
 
   const inputRef = useRef<HTMLInputElement>(null);
 

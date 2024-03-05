@@ -1,14 +1,14 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes, HashRouter } from "react-router-dom";
 
-import AppRoutes from "./pages/appRoutes";
+import AppRoutes from "./pages/AppRoutes";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/*" element={<AppRoutes />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
